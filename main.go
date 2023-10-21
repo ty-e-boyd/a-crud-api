@@ -1,6 +1,7 @@
 package main
 
 import (
+	"a-crud-api/controllers"
 	"a-crud-api/models"
 	"github.com/gin-gonic/gin"
 	"log"
@@ -15,6 +16,7 @@ func main() {
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"data": "good call"})
 	})
+	r.GET("/books", controllers.FindBooks)
 
 	err := r.Run()
 	if err != nil {
