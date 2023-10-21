@@ -17,6 +17,7 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"data": "good call"})
 	})
 	r.GET("/books", controllers.FindBooks)
+	r.POST("/books", controllers.CreateBook)
 
 	err := r.Run()
 	if err != nil {
